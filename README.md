@@ -29,7 +29,7 @@ Install the following dependencies:
     sudo apt-get install libnlopt-dev   
     sudo apt-get install gksu
 
-#####Please report any additional dependencies missing.
+####Please report any additional dependencies missing.
 
 
 Build your workspace
@@ -40,5 +40,5 @@ Launch the YouBot base simulation program from the LUH package:
 
 Launch a sample program from our package:  
 
-        roslaunch wpi-youbot launch.launch
+    roslaunch wpi-youbot launch.launch
         
