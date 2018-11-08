@@ -24,12 +24,16 @@ P = [[2.06498904e-01, -6.30755443e-07, 1.07477548e-03],
 Z = np.zeros((8, 3))
 
 # for i in range(8): Z[i, :] = np.dot(points[i, :], P)
-# Z = 10.0 * Z
+for i in range(8): Z[i, :] = points[i, :]
+Z = 10.0 * Z
+
+print(Z)
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
 r = [-1, 1]
+# r = r * 100
 
 X, Y = np.meshgrid(r, r)
 # plot vertices
@@ -45,9 +49,9 @@ verts = [[Z[0], Z[1], Z[2], Z[3]],
          [Z[2], Z[3], Z[7], Z[6]]]
 
 # plot sides
-ax.add_collection3d(Poly3DCollection(verts,
-                                     facecolors='cyan', linewidths=1, edgecolors='r', alpha=.25))
-
+ax.add_collection3d(Poly3DCollection(verts, facecolors='cyan', linewidths=1, edgecolors='r', alpha=.25))
+# ax.add_collecti
+# on3d(Poly3DCollection(verts, facecolors='cyan', linewidths=1, edgecolors='r', alpha=.75))
 ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
