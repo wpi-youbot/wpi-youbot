@@ -1,5 +1,11 @@
 <launch>
+
+<include file="$(find vicon_bridge)/launch/vicon.launch" />
+
   <!-- turtlebot_teleop_key already has its own built in velocity smoother -->
-  <node pkg="wpi-youbot" type="simple_topic_publisher.py" name="Planner"  output="screen">
+  <node pkg="wpi-youbot"
+  type="simple_topic_publisher.py"
+  name="Planner"
+  output="screen">
   </node>
 </launch>
