@@ -10,6 +10,7 @@ project(wpi-youbot)
 find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
+  vicon_bridge
 )
 
 ## System dependencies are found with CMake's conventions

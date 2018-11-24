@@ -1,8 +1,13 @@
 <launch>
 
-<include file="$(find vicon_bridge)/launch/vicon.launch" />
+<!--<include file="$(find vicon_bridge)/launch/vicon.launch" />-->
+<include file="$(find wpi-youbot)/launch/2rosbag.launch" />
+<!--<include file="$(find wpi-youbot)/launch/3rosbag.launch" />-->
 
-  <!-- turtlebot_teleop_key already has its own built in velocity smoother -->
+
+<node pkg="rosservice" type="rosservice" name="my_gazebo_reset" args="call --wait /gazebo/reset_simulation"/>
+
+  <!-- launch kuka youbot -->
   <node pkg="wpi-youbot"
   type="simple_topic_publisher.py"
   name="Planner"
