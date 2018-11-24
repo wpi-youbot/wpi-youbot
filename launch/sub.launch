@@ -1,0 +1,5 @@
+<launch>
+    <!-- My Package launch file -->
+    <node pkg="wpi-youbot" type="vicon_subscriber.py" name="topic_subscriber"  output="screen">
+    </node>
+</launch>
