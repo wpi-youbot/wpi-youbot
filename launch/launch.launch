@@ -1,8 +1,10 @@
 <launch>
 
 <!--<include file="$(find vicon_bridge)/launch/vicon.launch" />-->
-<include file="$(find wpi-youbot)/launch/2rosbag.launch" />
+<include file="$(find wpi-youbot)/launch/sub.launch" />
+<!--<include file="$(find wpi-youbot)/launch/2rosbag.launch" />-->
 <!--<include file="$(find wpi-youbot)/launch/3rosbag.launch" />-->
+<include file="$(find wpi-youbot)/launch/7rosbag.launch" />
 
 
 <node pkg="rosservice" type="rosservice" name="my_gazebo_reset" args="call --wait /gazebo/reset_simulation"/>

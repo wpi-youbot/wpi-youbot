@@ -3,5 +3,5 @@
     type="play"
     name="player"
     output="screen"
-    args="$(find wpi-youbot)/rosbags/2018-11-16-01-51-18.bag"/>
+    args="-l $(find wpi-youbot)/rosbags/2018-11-16-01-51-18.bag"/>
 </launch>
