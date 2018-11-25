@@ -1,12 +1,17 @@
 #! /usr/bin/env python
+
 import rospy
 import math
+
 from geometry_msgs.msg import Twist  # message used by /cmd_vel topic
 from geometry_msgs.msg import TransformStamped  # message used by /vicon/kukay/kukay topic
+from youbot_functions import *
+from trajectory_generation import *
 
 states = []  # robot states over time (x, y, theta, dx, dy, dtheta)
 
 pub = rospy.Publisher('/gazebo/cmd_vel', Twist, queue_size=1)
+
 
 # TODO: Enable correct robot simulation when rotation between robot coordinate frame and world frame occurs
 
@@ -17,6 +22,7 @@ def callback(msg):
     if callback.counter > 1:  # the second and any other call of this callback
         x = msg.transform.translation.x  # get the vicon data from the message
         y = msg.transform.translation.y
+        pid(states)
 
         # get the robot orientation [rad], 1 rotation DOF
         quat_z = msg.transform.rotation.z
@@ -30,14 +36,17 @@ def callback(msg):
 
         motion_command = Twist()
 
-        safe_linear_speed = 40.0 # TODO: this value needs some adjustment
+        safe_linear_speed = 40.0  # TODO: this value needs some adjustment
         safe_angular_speed = 3.0  # rad/s # TODO: verify max value with kuka manual
-        if (abs(dy) * 100 < safe_linear_speed) and (abs(dx) * 100 < safe_linear_speed) and (abs(dtheta) * 100 < safe_angular_speed):
+        if (abs(dy) * 100 < safe_linear_speed) and (abs(dx) * 100 < safe_linear_speed) and (
+                abs(dtheta) * 100 < safe_angular_speed):
             # pass vel values to the message
-            print("Hello OK")
+            # print("Hello OK")
             motion_command.linear.x = dy * 100  # note that axes are swapped to meet the youbot requirements
             motion_command.linear.y = dx * 100
             motion_command.angular.z = dtheta * 100
+
+            # Alternatively do the PID here
 
             # update last valid velocities
             states.append([x, y, theta, dx, dy, dtheta])
@@ -75,7 +84,7 @@ def callback(msg):
         theta = 2.0 * math.atan2(quat_z, quat_w)
 
         # pass robot initial positions and assume zero velocities
-        states.appeng([x, y, theta, 0, 0, 0])
+        states.append([x, y, theta, 0, 0, 0])
 
 
 callback.counter = 0
