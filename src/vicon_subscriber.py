@@ -23,6 +23,7 @@ def callback(msg):
         x = msg.transform.translation.x  # get the vicon data from the message
         y = msg.transform.translation.y
         pid(states)
+        trajectory(states)
 
         # get the robot orientation [rad], 1 rotation DOF
         quat_z = msg.transform.rotation.z
