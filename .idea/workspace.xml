@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69bae65f-3f3e-4c79-aca4-b9a192b38807" name="Default Changelist" comment="j">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jakub.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jakub.xml" afterDir="false" />
+    <list default="true" id="69bae65f-3f3e-4c79-aca4-b9a192b38807" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/trajectory_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trajectory_generation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vicon_subscriber.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vicon_subscriber.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/trajectory_generation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+            <state relative-caret-position="228">
+              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -426,19 +424,25 @@
       <option name="project" value="LOCAL" />
       <updated>1543179227323</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="python 5-th traj; early stages">
+      <created>1543264146562</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543264146562</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="20" width="1924" height="1062" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08496042" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920845" visible="true" weight="0.31590182" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920845" weight="0.31590182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -462,7 +466,8 @@
     <MESSAGE value="adding missing rosbags 2" />
     <MESSAGE value="vicon-based simulation ok" />
     <MESSAGE value="new files" />
-    <option name="LAST_COMMIT_MESSAGE" value="new files" />
+    <MESSAGE value="python 5-th traj; early stages" />
+    <option name="LAST_COMMIT_MESSAGE" value="python 5-th traj; early stages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trajectory_generation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        <state relative-caret-position="228">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

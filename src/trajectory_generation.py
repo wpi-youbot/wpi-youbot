@@ -37,6 +37,7 @@ class Trajectory:
                           self.wpts[i + 1][0], self.wpts[i + 1][1], self.wpts[i + 1][2]])
 
             poly_coefficients = np.linalg.inv(m) * b.transpose()
+            print(poly_coefficients)
             t_seg = np.arange(self.times[i], self.times[i+1], self.time_inc)
             s = Segment(poly_coefficients, t_seg)
             self.seg.append(s)
@@ -44,7 +45,8 @@ class Trajectory:
 
 if __name__ == "__main__":
     print("Hello")
-    x = np.array([[10, 0, 5], [40, 0, 5], [30, 0, 5], [90, 0, 5]])  # pos, vel, acc
+    # x = np.array([[10, 0, 5], [40, 0, 5], [30, 0, 5], [90, 0, 5]])  # pos, vel, acc
+    x = np.array([[10, 0, 0], [40, 0, 0], [30, 0, 0], [90, 0, 0]])  # pos, vel, acc
     t_int = np.array([0, 2, 4, 6])
     traj = Trajectory(x, t_int, 5)
     traj.compute_traj()
