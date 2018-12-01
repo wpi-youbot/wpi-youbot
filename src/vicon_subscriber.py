@@ -22,8 +22,8 @@ def callback(msg):
     if callback.counter > 1:  # the second and any other call of this callback
         x = msg.transform.translation.x  # get the vicon data from the message
         y = msg.transform.translation.y
-        pid(states)
-        trajectory(states)
+        # pid(states)
+        # trajectory(states)
 
         # get the robot orientation [rad], 1 rotation DOF
         quat_z = msg.transform.rotation.z
