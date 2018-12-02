@@ -3,11 +3,17 @@ import math
 
 
 class Robot:
-    def __init__(self, pos, robot_radius, wheel_radius, robot_base):  # TODO: define constraints
+    def __init__(self, pos):  # TODO: define constraints
         self._pos = pos  # robot position on the floor
-        self._robot_r = robot_radius  # safe radius [m]
-        self._wheel_r = wheel_radius  # safe radius [m]
-        self._robot_base = robot_base  # safe radius [m]
+        self._robot_r = 0.360  # safe radius [m]
+        self._wheel_r = 0.145 / 2  # safe radius [m]
+        self._robot_base = np.array([0.300 / 2.0, 0.471 / 2.0])  # safe radius [m]
+
+        # it used to be this way:
+        # self._pos = pos  # robot position on the floor
+        # self._robot_r = robot_radius  # safe radius [m]
+        # self._wheel_r = wheel_radius  # safe radius [m]
+        # self._robot_base = robot_base  # safe radius [m]
         # self.base =   # robot position on the floor
 
         tan = math.tan(np.pi / 4)  # for the 45 deg wheel configuration
@@ -16,6 +22,8 @@ class Robot:
                             [1, -1 / tan, ((self._robot_base[0] * tan + self._robot_base[1]) / tan)],
                             [1, -1 / tan, -((self._robot_base[0] * tan + self._robot_base[1]) / tan)],
                             [1, 1 / tan, ((self._robot_base[0] * tan + self._robot_base[1]) / tan)]])
+
+        self.pinvJ = np.linalg.pinv(self.J)
 
     @property
     def pos(self):  # getter
@@ -34,16 +42,34 @@ class Robot:
         print("Hello")
 
     def i_kins(self, vel):
+        # *** WHEEL ORDER AND AXIS ***
+        #         _________
+        #       1 |        | 2 # TODO: check coordinate frame
+        #         |   X    |
+        #         |   |_   |
+        #         |      Y |
+        #         |        |
+        #       3 __________ 4
+
         # Swap Vo x and y directions to match the world coordinates
         Vo = np.matrix([[vel[1]],
                         [vel[0]],
                         [vel[2]]])
-
-        print (self.J)
         Vw = self.J * Vo
-        print (Vw)
         return Vw
-        # return Vw
+
+    def f_kins(self, wheels_vel):
+        vel = self.pinvJ * wheels_vel
+        # Swap Vo x and y directions to match the world coordinates
+        vel = np.array([vel[1, 0],
+                        vel[0, 0],
+                        vel[2, 0]])
+        return vel
+
+    def f_dyn(self, wheels_torques):
+        pinvJtrans = np.linalg.pinv(np.transpose(self.pinvJ))
+        force = pinvJtrans * wheels_torques
+        return force
 
 
 class C(object):
@@ -71,22 +97,27 @@ if __name__ == "__main__":
     print("This is main")
 
     pos = np.matrix([10, 20])
-    wheel_r = 0.145 / 2
-    robot_r = 0.360
-    robot_b = np.array([0.300 / 2.0, 0.471 / 2.0])
-    r1 = Robot(pos, robot_r, wheel_r, robot_b)
-    new = np.matrix([[37],
-                     [27]])
-    # r1.pos = new
-    # out = r1.pos
-    # # print(out)
-    # hel = np.array([4, 5])
-    # res = new*hel
-    # print(hel[0])
-    # print(res)
-    # print(res[1, 1])
+    r1 = Robot(pos)
+
     cart_vel = np.array([0.3, 0.5, 0])
-    r1.i_kins(cart_vel)
+    print (cart_vel)
+    wheels = r1.i_kins(cart_vel)
+    print (wheels)
+
+    new_wheels = r1.f_kins(np.array([[1], [0], [0], [1]]))
+    lin_wheel_travel = 0.145/2
+    test_lin = lin_wheel_travel * (np.sqrt(2)/2)
+    print lin_wheel_travel
+    print test_lin
+    travel_robot = np.sqrt(np.power(new_wheels[0], 2) + np.power(new_wheels[1], 2))
+    print travel_robot
+
+    print (new_wheels)
+    trq = 0.145/2
+    torques = np.array([[trq], [0], [0], [trq]])
+    force = r1.f_dyn(torques)
+    print (force)
+
 
     # # x = np.array([[10, 0, 5], [40, 0, 5], [30, 0, 5], [90, 0, 5]])  # pos, vel, acc
     # x = np.array([[10, 0, 0], [40, 0, 0], [30, 0, 0], [90, 0, 0]])  # pos, vel, acc
