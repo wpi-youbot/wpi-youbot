@@ -5,6 +5,7 @@
       <w>dtheta</w>
       <w>extr</w>
       <w>kuka</w>
+      <w>mecanum</w>
       <w>timestampts</w>
       <w>traj</w>
       <w>waypoints</w>
