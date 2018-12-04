@@ -2,6 +2,9 @@ import numpy as np
 from scipy import integrate
 import matplotlib.pyplot as plt
 import math
+import time
+
+plt.interactive(False)
 
 # Define 0KUKA YouBot properties
 m0 = 20         # mass of platform (kg)
@@ -39,9 +42,20 @@ def ode_mecanum_mobile_dynamics(t, x):
 
     moment_val = 1
     M1 = moment_val
-    M2 = moment_val
-    M3 = moment_val
+    M2 = -moment_val
+    M3 = -moment_val
     M4 = moment_val
+
+    M1 = moment_val
+    M2 = moment_val
+    M3 = 0
+    M4 = 0
+
+    M1 = -moment_val
+    M2 = -moment_val
+    M3 = -moment_val
+    M4 = -moment_val
+
 
     # TODO need to use driving moments M(1-4) as inputs
     x_c_double_dot = ((-4 * J1) / A) * (-1) * y_c_dot * psi_dot + (R / A) * (
@@ -62,13 +76,14 @@ def ode_mecanum_mobile_dynamics(t, x):
 # Main method
 if __name__ == "__main__":
     t0, tf = 0, 25  # start and end time
-    t = np.linspace(t0, tf, 100)  # the points of evaluation of solution
+    t = np.linspace(t0, tf, 1000)  # the points of evaluation of solution
 
     # TODO Define start state
     # x0 = np.zeros((6, 1))
     x0 = np.zeros((6,))
     x = np.zeros((len(t), len(x0)))
     x[0, :] = x0
+    # print(x[0:3])
 
     # TODO Define driving moments for inputs, need to pass onto ode
     # M1, M2, M3, M4
@@ -82,9 +97,18 @@ if __name__ == "__main__":
             
     print "X:", x
     print "X shape:", x.shape
-    xd = x[:,3]
-    yd = x[:,4]
-    psid = x[:,5]
+
+    print(x)
+    # time.sleep(45)
+
+    x = x[:, 0]
+    # y = x[:, 1]
+    psi = x[:, 2]
+    xd = x[:, 3]
+    yd = x[:, 4]
+    psid = x[:, 5]
     plt.plot(t, xd)
+    plt.plot(t, yd)
+    # plt.plot(t, y)
 
     plt.show()  

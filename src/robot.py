@@ -1,14 +1,15 @@
 import numpy as np
 import math
+from trajectory_generation import *
 
 
 class Robot:
     def __init__(self, pos):  # TODO: define constraints
         self._pos = pos  # robot position on the floor
         self._robot_r = 0.360  # safe radius [m]
-        self._wheel_r = 0.145 / 2  # safe radius [m]
+        self._wheel_r = 0.050 # safe radius [m]
         self._robot_base = np.array([0.300 / 2.0, 0.471 / 2.0])  # safe radius [m]
-
+        self.traj = Trajectory.create()
         # it used to be this way:
         # self._pos = pos  # robot position on the floor
         # self._robot_r = robot_radius  # safe radius [m]
