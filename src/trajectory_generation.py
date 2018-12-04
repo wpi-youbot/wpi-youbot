@@ -1,11 +1,13 @@
 import math
 import numpy as np
 from numpy.core.multiarray import ndarray
+from VelFitting import *
 
 class Segment:
     def __init__(self, polynomial, time_range):
         self.poly = polynomial
         self.timepts = time_range
+
 
 
 class Trajectory:
@@ -16,12 +18,17 @@ class Trajectory:
         self.path = np.empty(shape=[2, 0])
         self.path_lengths = np.array([0.0])
 
+        self.mass = None
+        self.u_friction = None
+        self.acc = None
+        self.vel_limit = None
+
     @property
     def path(self):  # getter
         return self.path
 
     # @classmethod
-    def generatePath(self, start, target, obstacles):
+    def generate_path(self, start, target, obstacles):
         # obstacles: 2d array [2, n] of obstacle position vectors
         # start, target: initial and final robot position vectors [2, 1]
 
@@ -77,6 +84,9 @@ class Trajectory:
             self.path_lengths = np.concatenate((self.path_lengths, np.array([self.path_lengths[-1] + step])), axis=0)
             # add translation vector to the translation vectors array
             self.tr_vects = np.concatenate((self.tr_vects, translation_vec), axis=1)
+
+    def generate_trajectory(self):
+
 
     def print_dists(self):
         print self.path_lengths
