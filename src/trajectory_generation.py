@@ -2,7 +2,6 @@ import math
 import numpy as np
 from numpy.core.multiarray import ndarray
 
-
 class Segment:
     def __init__(self, polynomial, time_range):
         self.poly = polynomial
@@ -16,6 +15,10 @@ class Trajectory:
         self.times = np.empty(shape=[1, 0])  # timestampts
         self.path = np.empty(shape=[2, 0])
         self.path_lengths = np.array([0.0])
+
+    @property
+    def path(self):  # getter
+        return self.path
 
     # @classmethod
     def generatePath(self, start, target, obstacles):
@@ -68,7 +71,7 @@ class Trajectory:
             position = position + translation_vec
 
             # update path once new position is calculated
-            self.path = np.append(self.path, position)
+            self.path = np.append(self.path, position, 1)
             # increase total path length vector (used for plotting)
 
             self.path_lengths = np.concatenate((self.path_lengths, np.array([self.path_lengths[-1] + step])), axis=0)
