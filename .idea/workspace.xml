@@ -4,8 +4,7 @@
     <list default="true" id="69bae65f-3f3e-4c79-aca4-b9a192b38807" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/jakub.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/jakub.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VelFitting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/VelFitting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/robot.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/robot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simple" beforeDir="false" afterPath="$PROJECT_DIR$/src/simple" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/trajectory_generation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trajectory_generation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,10 +16,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/VelFitting.py">
+        <entry file="file://$PROJECT_DIR$/src/simple">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="290">
+              <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -71,10 +70,10 @@
         <option value="$PROJECT_DIR$/src/vicon_subscriber.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/kurczak.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/kaczka.py" />
-        <option value="$PROJECT_DIR$/src/simple" />
         <option value="$PROJECT_DIR$/src/robot.py" />
-        <option value="$PROJECT_DIR$/src/trajectory_generation.py" />
         <option value="$PROJECT_DIR$/src/VelFitting.py" />
+        <option value="$PROJECT_DIR$/src/trajectory_generation.py" />
+        <option value="$PROJECT_DIR$/src/simple" />
       </list>
     </option>
   </component>
@@ -142,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.VelFitting">
+  <component name="RunManager" selected="Python.simple">
     <configuration name="MecanumWheelRobot" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="wpi-youbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -257,9 +256,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.simple" />
         <item itemvalue="Python.VelFitting" />
         <item itemvalue="Python.robot" />
-        <item itemvalue="Python.simple" />
         <item itemvalue="Python.kurczak" />
         <item itemvalue="Python.MecanumWheelRobot" />
       </list>
@@ -395,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543928494039</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="drawing path-based vel constraints">
+      <created>1543980695246</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1543980695246</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -415,9 +421,9 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.21689059" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991462" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32917467" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.56238" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2034549" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.33084312" />
@@ -466,7 +472,8 @@
     <MESSAGE value="path generation ready" />
     <MESSAGE value="path generation plotting" />
     <MESSAGE value="vel fitting in progress" />
-    <option name="LAST_COMMIT_MESSAGE" value="vel fitting in progress" />
+    <MESSAGE value="drawing path-based vel constraints" />
+    <option name="LAST_COMMIT_MESSAGE" value="drawing path-based vel constraints" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -475,21 +482,6 @@
           <url>file://$PROJECT_DIR$/tests/test_classes</url>
           <line>23</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/trajectory_generation.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/trajectory_generation.py</url>
-          <line>83</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/trajectory_generation.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -637,10 +629,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/VelFitting.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/local/lib/python2.7/site-packages/matplotlib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="1866" selection-start-line="1866" selection-end-line="1866" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/local/lib/python2.7/site-packages/matplotlib/axes/_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/trajectory_generation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="522">
+          <caret line="107" column="10" selection-start-line="107" selection-start-column="10" selection-end-line="107" selection-end-column="10" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -649,18 +665,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/simple">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VelFitting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="290">
+          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>

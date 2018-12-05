@@ -1,4 +1,5 @@
 import math
+import time
 import numpy as np
 from numpy.core.multiarray import ndarray
 from VelFitting import *
@@ -11,40 +12,46 @@ class Segment:
 
 
 class Trajectory:
-    def __init__(self):  # TODO: define constraints
+    def __init__(self, mass, u_friction, acceleration, vel_limit):  # TODO: define constraints
         self.tr_vects = np.empty(shape=[2, 0])  # type ndarray of subsequent translation vectors
         self.wpts = np.empty(shape=[6, 0])  # waypoints
         self.times = np.empty(shape=[1, 0])  # timestampts
-        self.path = np.empty(shape=[2, 0])
-        self.path_lengths = np.array([0.0])
+        self._path = np.empty(shape=[2, 0])
+        self._path_lengths = np.array([0.0])
 
-        self.mass = None
-        self.u_friction = None
-        self.acc = None
-        self.vel_limit = None
+        self._mass = mass
+        self._u_friction = u_friction
+        self._force_friction = mass * u_friction
+        self._acc = acceleration
+        self._vel_limit = vel_limit
+        self._safe_vels = None
 
     @property
     def path(self):  # getter
-        return self.path
+        return self._path
+
+    def path_lengths(self):  # getter
+        return self.self.path_lengths
+
+    @property
+    def safe_vels(self):  # getter
+        return self._safe_vels
 
     # @classmethod
     def generate_path(self, start, target, obstacles):
         # obstacles: 2d array [2, n] of obstacle position vectors
         # start, target: initial and final robot position vectors [2, 1]
 
-        kuka_safe_radius = 360.0
         kuka_safe_radius = 0.3600
-        obstacle_safe_radius = 200.0
         obstacle_safe_radius = 0.2000
         safe_distance = kuka_safe_radius + obstacle_safe_radius
 
-        Q = 1100000.0  # potential value:a core parameter that changes the safe zone between obstacle and the robot
         Q = 1.1  # potential value:a core parameter that changes the safe zone between obstacle and the robot
         target_force_scaling = 4.0
 
         step = 0.0100  # this step affects simulation position increment TODO: make [ m ]
         position = start
-        self.path = np.concatenate((self.path, position), axis=1)
+        self._path = np.concatenate((self._path, position), axis=1)
         num_obstacles = obstacles.shape[1]
 
         # as long as the distance to the target is greater than some threshold value
@@ -78,17 +85,30 @@ class Trajectory:
             position = position + translation_vec
 
             # update path once new position is calculated
-            self.path = np.append(self.path, position, 1)
+            self._path = np.append(self._path, position, 1)
+
+            waypoint = np.zeros(shape=[6, 1])
+            waypoint[0:2] = position
+            self.wpts = np.append(self.wpts, waypoint, 1)
             # increase total path length vector (used for plotting)
 
-            self.path_lengths = np.concatenate((self.path_lengths, np.array([self.path_lengths[-1] + step])), axis=0)
+            self._path_lengths = np.concatenate((self._path_lengths, np.array([self._path_lengths[-1] + step])), axis=0)
             # add translation vector to the translation vectors array
             self.tr_vects = np.concatenate((self.tr_vects, translation_vec), axis=1)
 
     # def generate_trajectory(self):
 
+    def calculate_safe_vels(self):
+        offset = 5
+        for i in range(offset, self._path.shape[1] - offset):
+            _, r = define_circle(self._path[:, i - offset], self._path[:, i], self._path[:, i + offset])
+            print r
+            save_vel = np.sqrt(self._force_friction * r / self._mass)
+            self._safe_vels = np.append(self.safe_vels, save_vel)
+        # time.sleep(12)
+
     def print_dists(self):
-        print self.path_lengths
+        print self._path_lengths
 
     @classmethod
     def create(cls):
@@ -119,6 +139,30 @@ class Trajectory:
             t_seg = np.arange(self.times[i], self.times[i + 1], self.time_inc)
             s = Segment(poly_coefficients, t_seg)
             self.seg.append(s)
+
+
+def define_circle(p1, p2, p3):
+    """
+    Credits: User: DieterDP
+    https://stackoverflow.com/questions/28910718/give-3-points-and-a-plot-circle
+    Returns the center and radius of the circle passing the given 3 points.
+    In case the 3 points form a line, returns (None, infinity).
+    """
+    print "Hello"
+    temp = p2[0] * p2[0] + p2[1] * p2[1]
+    bc = (p1[0] * p1[0] + p1[1] * p1[1] - temp) / 2
+    cd = (temp - p3[0] * p3[0] - p3[1] * p3[1]) / 2
+    det = (p1[0] - p2[0]) * (p2[1] - p3[1]) - (p2[0] - p3[0]) * (p1[1] - p2[1])
+
+    if abs(det) < 1.0e-6:
+        return None, np.inf
+
+    # Center of circle
+    cx = (bc * (p2[1] - p3[1]) - cd * (p1[1] - p2[1])) / det
+    cy = ((p1[0] - p2[0]) * cd - (p2[0] - p3[0]) * bc) / det
+
+    radius = np.sqrt((cx - p1[0]) ** 2 + (cy - p1[1]) ** 2)
+    return (cx, cy), radius
 
 
 if __name__ == "__main__":

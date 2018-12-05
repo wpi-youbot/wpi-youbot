@@ -4,7 +4,11 @@ import matplotlib.pyplot as plt
 from trajectory_generation import *
 import numpy as np
 
-traj = Trajectory()
+mass = 20
+u_friction = 0.2
+acceleration = 0.5
+vel_limit = 2.0
+traj = Trajectory(mass, u_friction, acceleration, vel_limit)
 
 start = np.array([[2.0],
                   [0.0]])
@@ -16,14 +20,29 @@ obstacles = np.array([[1.7, 2.3, 3.5],
                       [1.6, 1.9, 3.5]])
 
 traj.generate_path(start, target, obstacles)
+traj.calculate_safe_vels()
+vels = traj.safe_vels
 traj.print_dists()
 path = traj.path
 
 fig, ax = plt.subplots()
 print path.shape
+print path
+# time.sleep(10)
 ax.plot(path[0, :], path[1, :])
 
 ax.set(xlabel='x', ylabel='y',
        title='Path in the cartesian space')
 ax.grid()
+
+print vels
+fig2, ax2 = plt.subplots()
+# ax2.plot(vels, traj.path)
+ax2.plot(vels)
+
+ax2.set(xlabel='Path point', ylabel='Safe velocity value',
+       title='Safe robot velocities over path waypoints')
+
+ax2.grid()
+
 plt.show()

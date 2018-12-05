@@ -9,6 +9,8 @@
       <w>mecanum</w>
       <w>timestampts</w>
       <w>traj</w>
+      <w>vects</w>
+      <w>vels</w>
       <w>waypoints</w>
       <w>wpts</w>
     </words>
