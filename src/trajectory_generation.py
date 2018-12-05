@@ -3,11 +3,11 @@ import numpy as np
 from numpy.core.multiarray import ndarray
 from VelFitting import *
 
+
 class Segment:
     def __init__(self, polynomial, time_range):
         self.poly = polynomial
         self.timepts = time_range
-
 
 
 class Trajectory:
@@ -85,8 +85,7 @@ class Trajectory:
             # add translation vector to the translation vectors array
             self.tr_vects = np.concatenate((self.tr_vects, translation_vec), axis=1)
 
-    def generate_trajectory(self):
-
+    # def generate_trajectory(self):
 
     def print_dists(self):
         print self.path_lengths

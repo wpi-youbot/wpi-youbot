@@ -103,19 +103,21 @@ if __name__ == "__main__":
     cart_vel = np.array([0.3, 0.5, 0])
     print (cart_vel)
     wheels = r1.i_kins(cart_vel)
-    print (wheels)
+    # print (wheels)
 
     new_wheels = r1.f_kins(np.array([[1], [0], [0], [1]]))
-    lin_wheel_travel = 0.145/2
+    lin_wheel_travel = 0.100/2
     test_lin = lin_wheel_travel * (np.sqrt(2)/2)
     print lin_wheel_travel
     print test_lin
     travel_robot = np.sqrt(np.power(new_wheels[0], 2) + np.power(new_wheels[1], 2))
-    print travel_robot
+    # print travel_robot
 
+    # Computing torque force ratio
     print (new_wheels)
-    trq = 0.145/2
-    torques = np.array([[trq], [0], [0], [trq]])
+    trq = 0.100/2  # [Nm]
+    # torques = np.array([[trq], [0], [0], [trq]])
+    torques = np.array([[trq], [trq], [trq], [trq]])
     force = r1.f_dyn(torques)
     print (force)
 
