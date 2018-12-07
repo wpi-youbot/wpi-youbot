@@ -2,34 +2,52 @@ import numpy as np
 import time
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
+# import mpl_toolkits.mplot3d *
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import matplotlib
 
 
-def print_robot(x, y, rot):
-    # *** WHEEL ORDER AND AXIS *** TODO: update drawing with robot.py if neeeded
-    #         dimension wid
-    #         _________
-    # dim:  1 |        | 2 # TODO: check coordinate frame with robot.py
-    #    l    |   Y    |
-    #    e    |   |_   |
-    #    n    |      X |
-    #         |        |
-    #       3 __________ 4
-    w = 450.0
-    l = 550.0
-    robot_points(x, y)
-    # wheels:
-    wh1_verts, _ = make_wheel(x - w / 2.0, y + l / 2, 0.1, 1)
-    wh2_verts, _ = make_wheel(x + w / 2.0, y + l / 2, 0.1, 1)
-    wh3_verts, _ = make_wheel(x - w / 2.0, y - l / 2, 0.1, 1)
-    wh4_verts, _ = make_wheel(x + w / 2.0, y - l / 2, 0.1, 1)
+def print_robot(x, y, rot, robot, wheels):
+    """
+    *** WHEEL ORDER AND AXIS *** TODO: update drawing with robot.py if neeeded
+
+            dimension wid
+             _________
+     dim:  1 |        | 2 # TODO: check coordinate frame with robot.py
+        l    |   Y    |
+        e    |   |_   |
+        n    |      X |
+             |        |
+           3 |________| 4
+    """
+
+    w = 0.450
+    l = 0.550
+    robot_verts = robot_points(x, y)
+    robot.set_verts(robot_verts)
+
+    wheels_verts = []
+
+    wh1_verts, _ = make_wheel(x - w / 2.0, y + l / 2, 0.1, 0.1, rot)
+    wheels_verts.append(wh1_verts)
+    wh2_verts, _ = make_wheel(x + w / 2.0, y + l / 2, 0.1, 0.1, rot)
+    wheels_verts.append(wh2_verts)
+    wh3_verts, _ = make_wheel(x - w / 2.0, y - l / 2, 0.1, 0.1, rot)
+    wheels_verts.append(wh3_verts)
+    wh4_verts, _ = make_wheel(x + w / 2.0, y - l / 2, 0.1, 0.1, rot)
+    wheels_verts.append(wh4_verts)
+
+    # wheels[0].set_verts(wheels_verts[0])
+    for it in range(4):
+        wheels[it].set_verts(wheels_verts[it])
+
+    return robot_verts, wheels_verts
 
 
 def make_wheel(x, y, h, wheel_height, rot):
     nphi, nz = 23, 2
-    r = 0.5  # radius of cylinder
+    r = 0.1  # radius of cylinder
     phi = np.linspace(0, 360, nphi) / 180.0 * np.pi
     z = np.linspace(- wheel_height / 2.0, wheel_height / 2.0, nz)
     print z
@@ -63,13 +81,30 @@ def make_wheel(x, y, h, wheel_height, rot):
             verts.append((z1 + x, sp1 + y, cp1 + h))
             verts.append((z1 + x, sp0 + y, cp0 + h))
 
+            verts_cov1 = []
+            verts_cov1.append((x - wheel_height/2.0, y, h))
+            verts_cov1.append((x - wheel_height/2.0, y, h))
+            verts_cov1.append((z0 + x, sp0 + y, cp0 + h))
+            verts_cov1.append((z0 + x, sp1 + y, cp1 + h))
+
+
+            verts_cov2 = []
+            verts_cov2.append((x + wheel_height/2.0, y, h))
+            verts_cov2.append((x + wheel_height/2.0, y, h))
+            verts_cov2.append((z1 + x, sp0 + y, cp0 + h))
+            verts_cov2.append((z1 + x, sp1 + y, cp1 + h))
+
             verts2.append(verts)
+            verts2.append(verts_cov1)
+            verts2.append(verts_cov2)
             if i % 2:
                 dark = 0.15
                 col = (dark, dark, dark, 1)
             else:
                 light = 0.99
                 col = (light, light, light, 1)
+            cols.append(col)
+            cols.append(col)
             cols.append(col)
 
     return verts2, cols
