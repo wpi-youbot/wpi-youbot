@@ -113,7 +113,7 @@ def animate(num, rob, whls, path):
     ax.elev = 45.0
     ax.azim = -60.0
     ax.elev = 70.0
-    ax.azim = -60.0
+    ax.azim = -70.0
     ax.dist = 3.
 
 
