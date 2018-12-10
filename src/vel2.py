@@ -2,18 +2,18 @@ from VelFitting import *
 import sys
 import time
 
-sys.path.append('../src')
-from our_rendering import *
+# sys.path.append('../src')
+# from our_rendering import *
 
 # Execute motion 1
 from motion1 import *
 
 print("Testing fitting")
+#
+# x_path = np.linspace(0.0, 3.0, num=31)
+# y_path = np.linspace(0.0, 0.0, num=31)
 
-x_path = np.linspace(0.0, 3.0, num=31)
-y_path = np.linspace(0.0, 0.0, num=31)
-
-path = np.vstack((x_path, y_path))
+# path = np.vstack((x_path, y_path))
 print path.shape
 # time.sleep(3)
 # print x_path.shape
@@ -57,11 +57,13 @@ limit_vels = fit.vel_path_constr
 
 fig, ax = plt.subplots()
 print path.shape
-ax.plot(path[0, :], limit_vels)
+x_axis = np.linspace(0, 5.71, num=572)
+ax.plot(x_axis, limit_vels)
+# ax.plot(path[0, :], limit_vels)
 ax.set(xlabel='path', ylabel='vel_limit',
        title='Vel limit over path')
 
-for it in range(125):
+for it in range(405):
     fit.update_nodes()
     # print fit.vel_output
     # print fit.vel_level
@@ -70,7 +72,7 @@ for it in range(125):
 print fit.vel_output
 print fit.vel_output.shape
 
-ax.plot(path[0, :], fit.vel_output, color='red')
+ax.plot(x_axis, fit.vel_output, color='red')
 
 # plt.axhline(y=0.5, color='r', linestyle='-')
 

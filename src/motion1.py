@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 from trajectory_generation import *
 import numpy as np
 
-mass = 20
+mass = 140
 u_friction = 0.2
-acceleration = 0.5
+acceleration = 2.0
 vel_limit = 2.0
 traj = Trajectory(mass, u_friction, acceleration, vel_limit)
 
@@ -22,7 +22,7 @@ obstacles = np.array([[1.7, 2.3, 3.5],
 traj.generate_path(start, target, obstacles)
 traj.calculate_safe_vels()
 path_based_vels = traj.safe_vels
-print vels
+# print vels
 print path_based_vels.shape
 # traj.print_dists()
 path = traj.path
