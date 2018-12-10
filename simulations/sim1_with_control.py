@@ -16,8 +16,8 @@ x_pos_100 = np.load('x_pos_100.npy')
 y_pos_100 = np.load('y_pos_100.npy')
 x_ref = np.load('x_ref.npy')
 y_ref = np.load('y_ref.npy')
-new_path = np.vstack((x_pos, y_pos))
-#new_path = np.vstack((x_pos_100, y_pos_100))
+#new_path = np.vstack((x_pos, y_pos))
+new_path = np.vstack((x_pos_100, y_pos_100))
 ref_path = np.vstack((x_ref, y_ref))
 path = new_path
 
@@ -120,7 +120,7 @@ def animate(num, rob, whls, path):
 tic = time.time()
 # wheels = np.array([wh1, wh1])
 # Creating the Animation object
-line_ani = animation.FuncAnimation(fig, animate, 490, fargs=(kuka, wheels, path),
+line_ani = animation.FuncAnimation(fig, animate, 200, fargs=(kuka, wheels, path),
                                    interval=1, blit=False)
 
 plt.show()
