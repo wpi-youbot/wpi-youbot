@@ -44,6 +44,19 @@ def print_robot(x, y, rot, robot, wheels):
 
     return robot_verts, wheels_verts
 
+def print_vectors(x,y, quivers, vals):
+    """updates the horizontal and vertical vector components by a
+    fixed increment on each frame
+    """
+    for it in range(4)
+        quivers[it].set_
+
+    U = np.cos(X + num*0.1)
+    V = np.sin(Y + num*0.1)
+
+    Q.set_UVC(U,V)
+
+    return Q,
 
 def make_wheel(x, y, h, wheel_height, rot):
     nphi, nz = 23, 2

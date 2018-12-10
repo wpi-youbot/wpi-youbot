@@ -17,6 +17,7 @@ class VelFitting:
         self.left_nodes = np.empty((1, 1), dtype=object)
         self.vel_level = 0
         self.vel_path_constr = np.empty((1, 1))
+        self.prev_activated = np.empty((1, 1), dtype=object)
 
     def set_robot_properties(self, mass, u_friction, acceleration):
         self.mass = mass
@@ -51,8 +52,36 @@ class VelFitting:
         self.update_nodes()
 
     def update_nodes(self):
+        self.vel_level
+        # velocity increment depends on the line distance traveled (const) and acceleration ratio (const)
+        # and the previous velocity (variable, known)
+        # distance = V0*t + 0.5*a*t^2, where t is the time of execution of the line segment
+        # thus:
+        # 0 = (0.5*a)*t^2 + (V0)*t - distance
+        # Computing delta -> getting time results -> selecting positive result
+        distance = 0.01  # segment distance
+        delta = np.power(self.vel_level, 2) + 4.0 * 0.5 * self.acc * distance  # adding the 4ac component since distance is substr
+        t1 = (-self.vel_level - np.sqrt(delta)) / self.acc
+        t2 = (-self.vel_level + np.sqrt(delta)) / self.acc
+        if t1 > t2:
+            t = t1
+        else:
+            t = t2
+        if t <= 0.0:
+            print "Error negative time"
+            time.sleep(5)
+
+        print "This is time"
+        print t
         # update the reference level (compute current allowed velocity increment from the last velocity distance)
+
+        self.vel_level = self.vel_level + self.acc * t
+        print self.vel_level
+
         # collect the new limit points from the path limit if found any
+        activation = np.where(self.path < self.vel_level)[0]
+        not_valid = np.isin(activation, self.prev_activated)
+
         # init nodes at the boundaries of the new groups
         # exclude new points found from future search: add them to fixed points
 
@@ -61,26 +90,26 @@ class VelFitting:
         # check the distance to the closest left node (which has different index - to avoid closing newly initialized)
 
         # if distance to the nearest is > 1:
-            # Progress the node:
-                # Compute new velocity;
-                    # Check if the max new velocity is in range of the path velocity limit
-                        # When in range: update the absolute velocity of the new node point
-                        # Not in range: compute the allowed acceleration that will fit the limit imposed
-                            # If acceleration computed is out of scope, throw an error and interrupt
+        # Progress the node:
+        # Compute new velocity;
+        # Check if the max new velocity is in range of the path velocity limit
+        # When in range: update the absolute velocity of the new node point
+        # Not in range: compute the allowed acceleration that will fit the limit imposed
+        # If acceleration computed is out of scope, throw an error and interrupt
 
-                # Update node index
-                # Add the node point index to fixed
+        # Update node index
+        # Add the node point index to fixed
 
         # if distance is 1:
-            # check if connection between the nodes is dynamically feasible
-                # if feasible, deactivate both nodes
-                # if not feasible, select the node with lower velocity value
-                    # see the range of indices of the node considered previously
-                    # while newly planned waypoint in range of the other node:
-                        # progress this node using max acceleration possible
-                        # update the state of waypoint that is attached
-                        # check if the new node endpoint matches with next fixed point
-                        # if matches, deactivate the node and update the index of the other node
+        # check if connection between the nodes is dynamically feasible
+        # if feasible, deactivate both nodes
+        # if not feasible, select the node with lower velocity value
+        # see the range of indices of the node considered previously
+        # while newly planned waypoint in range of the other node:
+        # progress this node using max acceleration possible
+        # update the state of waypoint that is attached
+        # check if the new node endpoint matches with next fixed point
+        # if matches, deactivate the node and update the index of the other node
         pass
 
 
@@ -124,18 +153,18 @@ if __name__ == "__main__":
     vel_lim = 2  # [m/s]
 
     fit.set_robot_properties(mass, u_fr, acc)
-    start = np.array([[0.0],   # x
-                      [0.0],   # y
-                      [0.0],   # rot
-                      [0.0],   # xd
-                      [0.0],   # yd
+    start = np.array([[0.0],  # x
+                      [0.0],  # y
+                      [0.0],  # rot
+                      [0.0],  # xd
+                      [0.0],  # yd
                       [0.0]])  # rotd
 
-    final = np.array([[3.0],   # x
-                      [0.0],   # y
-                      [0.0],   # rot
-                      [1.0],   # xd
-                      [1.0],   # yd
+    final = np.array([[3.0],  # x
+                      [0.0],  # y
+                      [0.0],  # rot
+                      [1.0],  # xd
+                      [1.0],  # yd
                       [0.0]])  # rotd
 
     fit.set_vel_conditions(start, final, constraints, max_robot_vel=2.0)
@@ -152,4 +181,3 @@ if __name__ == "__main__":
            title='Vel limit over path')
     ax.grid()
     plt.show()
-

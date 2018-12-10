@@ -67,10 +67,10 @@ def update_lines(num, rob, whls, path):
     ax.set_ylim(path[num] - 4.0, path[num] + 4.0)
     ax.set_zlim(0, 2)
 
-    ax.elev = 90.
-    ax.azim = -90.
-    ax.dist = 5. - (0.08 * num)
-    ax.dist = 1.
+    ax.elev = 70.
+    ax.azim = -60.
+    ax.dist = 5. - (0.02 * num)
+    # ax.dist = 5.
 
 
     # for iter in range(4):
