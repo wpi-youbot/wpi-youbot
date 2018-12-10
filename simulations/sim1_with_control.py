@@ -88,28 +88,33 @@ for it in range(obstacles.shape[1]):
     ax.add_collection(obj)
 
 
+obstacles = np.array([[1.7, 2.3, 2.1],
+                      [1.3, 1.9, 3.5]])
+
+
 def animate(num, rob, whls, path):
     print "Path shape:", path.shape
     print "New path shape:", new_path.shape
-    vel_val = 0.2 + 0.02 * num
-    tor_val = 0.3 + 0.02 * num / 8.0
+    vel_val = 0.0
+    tor_val = 0.0
     # vel_val = 1.0
     wheel_vels = np.array([[vel_val], [vel_val], [vel_val], [vel_val]])
     wheel_torques = np.array([[tor_val], [tor_val], [tor_val], [tor_val]])
 
-    robot_verts, wheels_verts = print_robot(path[0, num], path[1, num], path[1, num] * 250, rob, whls, wheel_vels,
+    robot_verts, wheels_verts = print_robot(path[0, num], path[1, num], path[1, num] * 450, rob, whls, wheel_vels,
                                             q_vels,
                                             wheel_torques, q_tor)
     # rob.set_verts(robot_verts)
-    ax.view_init(30, 50 + 0.05 * num)
-    ax.set_xlim(path[0, num] - 4.0, path[0, num] + 4.0)
-    ax.set_ylim(path[1, num] - 4.0, path[1, num] + 4.0)
+    # ax.view_init(30, 50)
+    ax.set_xlim(path[0, num] - 6.0, path[0, num] + 6.0)
+    ax.set_ylim(path[1, num] - 6.0, path[1, num] + 6.0)
     # ax.set_zlim(0, 2)
 
-    ax.elev = 30.
-    ax.azim = -60.
-    ax.dist = 5. - (0.02 * num)
-    ax.dist = 5.
+    ax.elev = 45.0
+    ax.azim = -60.0
+    ax.elev = 70.0
+    ax.azim = -60.0
+    ax.dist = 3.
 
 
 tic = time.time()

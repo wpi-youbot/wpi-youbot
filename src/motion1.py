@@ -23,6 +23,10 @@ target = np.array([[2.0],
 obstacles = np.array([[1.7, 2.3, 3.5],
                       [1.6, 1.9, 3.5]])
 
+obstacles = np.array([[1.7, 2.3, 2.1],
+                      [1.6, 1.9, 3.5]])
+
+
 traj.generate_path(start, target, obstacles)
 traj.calculate_safe_vels()
 path_based_vels = traj.safe_vels
