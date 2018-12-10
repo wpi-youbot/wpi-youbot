@@ -99,12 +99,27 @@ class Trajectory:
     # def generate_trajectory(self):
 
     def calculate_safe_vels(self):
+
         offset = 5
-        for i in range(offset, self._path.shape[1] - offset):
-            _, r = define_circle(self._path[:, i - offset], self._path[:, i], self._path[:, i + offset])
-            print r
-            save_vel = np.sqrt(self._force_friction * r / self._mass)
+        copy_lastvel = 0
+        for i in range(0, self._path.shape[1]-1):
+            if i < offset:
+                save_vel = 1
+            elif i < range(offset, self._path.shape[1])[-5]:
+                _, r = define_circle(self._path[:, i - offset], self._path[:, i], self._path[:, i + offset])
+                save_vel = np.sqrt(self._force_friction * r / self._mass)
+                copy_lastvel = save_vel
+            # print r
+            else:
+                save_vel = copy_lastvel
             self._safe_vels = np.append(self.safe_vels, save_vel)
+
+        # offset = 5
+        # for i in range(offset, self._path.shape[1] - offset):
+        #     _, r = define_circle(self._path[:, i - offset], self._path[:, i], self._path[:, i + offset])
+        #     print r
+        #     save_vel = np.sqrt(self._force_friction * r / self._mass)
+        #     self._safe_vels = np.append(self.safe_vels, save_vel)
         # time.sleep(12)
 
     def print_dists(self):
@@ -148,7 +163,7 @@ def define_circle(p1, p2, p3):
     Returns the center and radius of the circle passing the given 3 points.
     In case the 3 points form a line, returns (None, infinity).
     """
-    print "Hello"
+    # print "Hello"
     temp = p2[0] * p2[0] + p2[1] * p2[1]
     bc = (p1[0] * p1[0] + p1[1] * p1[1] - temp) / 2
     cd = (temp - p3[0] * p3[0] - p3[1] * p3[1]) / 2
@@ -166,7 +181,7 @@ def define_circle(p1, p2, p3):
 
 
 if __name__ == "__main__":
-    print("Hello")
+    # print("Hello")
     # x = np.array([[10, 0, 5], [40, 0, 5], [30, 0, 5], [90, 0, 5]])  # pos, vel, acc
     x = np.array([[10, 0, 0], [40, 0, 0], [30, 0, 0], [90, 0, 0]])  # pos, vel, acc
     t_int = np.array([0, 2, 4, 6])

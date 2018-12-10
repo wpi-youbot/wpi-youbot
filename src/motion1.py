@@ -21,9 +21,13 @@ obstacles = np.array([[1.7, 2.3, 3.5],
 
 traj.generate_path(start, target, obstacles)
 traj.calculate_safe_vels()
-vels = traj.safe_vels
+path_based_vels = traj.safe_vels
+print vels
+print path_based_vels.shape
 # traj.print_dists()
 path = traj.path
+print path.shape
+
 
 # print path.shape
 # print vels
