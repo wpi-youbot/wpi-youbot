@@ -50,7 +50,6 @@ final = np.array([[2.0],  # x
 
 # fit.set_vel_conditions(start, final, constraints, max_robot_vel=2.0)
 fit.set_vel_conditions(start, final, path_based_vels, max_robot_vel=2.0)
-
 limit_vels = fit.vel_path_constr
 # print limit_vels
 # print limit_vels[-1]
@@ -61,7 +60,7 @@ x_axis = np.linspace(0, 5.71, num=572)
 ax.plot(x_axis, limit_vels)
 # ax.plot(path[0, :], limit_vels)
 ax.set(xlabel='path', ylabel='vel_limit',
-       title='Vel limit over path')
+       title='Velocity limit over path')
 
 for it in range(405):
     fit.update_nodes()
@@ -73,6 +72,27 @@ print fit.vel_output
 print fit.vel_output.shape
 
 ax.plot(x_axis, fit.vel_output, color='red')
+
+######
+# acceleration = 1.0
+# fit2 = VelFitting(path)
+# fit2.set_robot_properties(mass, u_friction, acceleration)
+# fit2.set_vel_conditions(start, final, path_based_vels, max_robot_vel=2.0)
+# limit_vels2 = fit2.vel_path_constr
+# for it in range(405):
+#     fit2.update_nodes()
+# ax.plot(x_axis, fit2.vel_output, color='green')
+
+
+######
+# acceleration = 0.25
+# fit3 = VelFitting(path)
+# fit3.set_robot_properties(mass, u_friction, acceleration)
+# fit3.set_vel_conditions(start, final, path_based_vels, max_robot_vel=2.0)
+# limit_vels3 = fit3.vel_path_constr
+# for it in range(405):
+#     fit3.update_nodes()
+# ax.plot(x_axis, fit3.vel_output, color='orange')
 
 # plt.axhline(y=0.5, color='r', linestyle='-')
 

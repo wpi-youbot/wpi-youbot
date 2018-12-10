@@ -4,9 +4,13 @@ import matplotlib.pyplot as plt
 from trajectory_generation import *
 import numpy as np
 
-mass = 140
-u_friction = 0.2
+mass = 20
+u_friction = 0.02
+# u_friction = 0.20
+# u_friction = 0.10
+# u_friction = 0.05
 acceleration = 2.0
+# acceleration = 0.25
 vel_limit = 2.0
 traj = Trajectory(mass, u_friction, acceleration, vel_limit)
 
