@@ -5,10 +5,7 @@ import numpy as np
 from matplotlib.patches import Circle
 
 
-def plot_3D_cylinder(radius, height, elevation=0, resolution=100, color='r', x_center=0, y_center=0):
-    fig = plt.figure()
-    ax = Axes3D(fig, azim=30, elev=30)
-
+def plot_3D_cylinder(ax, radius, height, elevation=0, resolution=100, color='r', x_center=0, y_center=0):
     x = np.linspace(x_center - radius, x_center + radius, resolution)
     z = np.linspace(elevation, elevation + height, resolution)
     X, Z = np.meshgrid(x, z)
@@ -26,18 +23,12 @@ def plot_3D_cylinder(radius, height, elevation=0, resolution=100, color='r', x_c
     ax.add_patch(ceiling)
     art3d.pathpatch_2d_to_3d(ceiling, z=elevation + height, zdir="z")
 
-    ax.set_xlabel('x-axis')
-    ax.set_ylabel('y-axis')
-    ax.set_zlabel('z-axis')
-
-    plt.show()
-
 
 # params
 radius = 1
 height = 1
-elevation = -5
-resolution = 15
+elevation = 0.0
+resolution = 19
 color = 'r'
 x_center = 3
 y_center = -2

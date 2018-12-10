@@ -1,4 +1,7 @@
+import mpl_toolkits.mplot3d.art3d as art3d
 import numpy as np
+from matplotlib.patches import Circle
+
 import time
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
@@ -8,7 +11,7 @@ import matplotlib.animation as animation
 import matplotlib
 
 
-def print_robot(x, y, rot, robot, wheels):
+def print_robot(x, y, rot, robot, wheels, vels, q_vels, torqes, q_torques):
     """
     *** WHEEL ORDER AND AXIS *** TODO: update drawing with robot.py if neeeded
 
@@ -21,9 +24,13 @@ def print_robot(x, y, rot, robot, wheels):
              |        |
            3 |________| 4
     """
+    # wheel velocity vector
+    print_vectors(x, y, vels, q_vels)
+    print_vectors(x, y + 0.02, torqes, q_torques)
 
     w = 0.450
     l = 0.550
+
     robot_verts = robot_points(x, y)
     robot.set_verts(robot_verts)
 
@@ -44,19 +51,27 @@ def print_robot(x, y, rot, robot, wheels):
 
     return robot_verts, wheels_verts
 
-def print_vectors(x,y, quivers, vals):
-    """updates the horizontal and vertical vector components by a
-    fixed increment on each frame
-    """
-    for it in range(4)
-        quivers[it].set_
 
-    U = np.cos(X + num*0.1)
-    V = np.sin(Y + num*0.1)
+def print_vectors(x, y, vals, quivers):
+    w = 0.450
+    l = 0.550
+    z_val = 0.1
+    X = np.array([[x - w / 2.0], [x + w / 2.0], [x - w / 2.0], [x + w / 2.0]])
+    Y = np.array([[y + l / 2], [y + l / 2], [y - l / 2], [y - l / 2]])
+    Z = np.array([[z_val], [z_val], [z_val], [z_val]])
+    v = np.array([[-1.0], [1.0], [-1.0], [1.0]])
+    u = np.array([[0.0], [0.0], [0.0], [0.0]])
+    w = np.array([[0.0], [0.0], [0.0], [0.0]])
 
-    Q.set_UVC(U,V)
+    segments = quiver_data_to_segments(X, Y, Z, u, v, w, length=vals)
+    quivers.set_segments(segments)
 
-    return Q,
+
+def quiver_data_to_segments(X, Y, Z, u, v, w, length=1):
+    segments = (X, Y, Z, X + v * length, Y + u * length, Z + w * length)
+    segments = np.array(segments).reshape(6, -1)
+    return [[[x, y, z], [u, v, w]] for x, y, z, u, v, w in zip(*list(segments))]
+
 
 def make_wheel(x, y, h, wheel_height, rot):
     nphi, nz = 23, 2
@@ -95,15 +110,14 @@ def make_wheel(x, y, h, wheel_height, rot):
             verts.append((z1 + x, sp0 + y, cp0 + h))
 
             verts_cov1 = []
-            verts_cov1.append((x - wheel_height/2.0, y, h))
-            verts_cov1.append((x - wheel_height/2.0, y, h))
+            verts_cov1.append((x - wheel_height / 2.0, y, h))
+            verts_cov1.append((x - wheel_height / 2.0, y, h))
             verts_cov1.append((z0 + x, sp0 + y, cp0 + h))
             verts_cov1.append((z0 + x, sp1 + y, cp1 + h))
 
-
             verts_cov2 = []
-            verts_cov2.append((x + wheel_height/2.0, y, h))
-            verts_cov2.append((x + wheel_height/2.0, y, h))
+            verts_cov2.append((x + wheel_height / 2.0, y, h))
+            verts_cov2.append((x + wheel_height / 2.0, y, h))
             verts_cov2.append((z1 + x, sp0 + y, cp0 + h))
             verts_cov2.append((z1 + x, sp1 + y, cp1 + h))
 
@@ -151,3 +165,62 @@ def robot_points(x, y):
              [Zm[2], Zm[3], Zm[7], Zm[6]]]
 
     return verts
+
+
+def print_obstacle(ax, radius, height, elevation=0, resolution=13, color='r', x_center=0, y_center=0):
+    x = np.linspace(x_center - radius, x_center + radius, resolution)
+    z = np.linspace(elevation, elevation + height, resolution)
+    X, Z = np.meshgrid(x, z)
+
+    Y = np.sqrt(radius ** 2 - (X - x_center) ** 2) + y_center  # Pythagorean theorem
+
+    ax.plot_surface(X, Y, Z, linewidth=0, color=color)
+    ax.plot_surface(X, (2 * y_center - Y), Z, linewidth=0, color=color)
+
+    # floor = Circle((x_center, y_center), radius, color=color)
+    # ax.add_patch(floor)
+    # art3d.pathpatch_2d_to_3d(floor, z=elevation, zdir="z")
+
+    # ceiling = Circle((x_center, y_center), radius, color=color)
+    # ax.add_patch(ceiling)
+    # art3d.pathpatch_2d_to_3d(ceiling, z=elevation + height, zdir="z")
+
+
+def make_obstacle(x, y):
+    nphi, nz = 43, 2
+    r = 0.2  # radius of cylinder
+    phi = np.linspace(0, 360, nphi) / 180.0 * np.pi
+    h = 0.25
+    z = np.linspace(0, h, nz)
+    print z
+
+    cols = []
+    verts2 = []
+
+    # rot = 12.0 / 180.0 * np.pi
+
+    for i in range(len(phi) - 1):
+        cp0 = r * np.cos(phi[i])
+        cp1 = r * np.cos(phi[i + 1])
+        sp0 = r * np.sin(phi[i])
+        sp1 = r * np.sin(phi[i + 1])
+
+        for j in range(len(z) - 1):
+            z0 = z[j]
+            z1 = z[j + 1]
+            verts = []
+            verts.append((cp0 + x, sp0 + y, z0 + h))
+            verts.append((cp1 + x, sp1 + y, z0 + h))
+            verts.append((cp1 + x, sp1 + y, z1 + h))
+            verts.append((cp0 + x, sp0 + y, z1 + h))
+
+            verts2.append(verts)
+            if i % 2:
+                dark = 0.25
+                col = (dark, dark, dark, 1)
+            else:
+                light = 0.40
+                col = (light, light, light, 1)
+            cols.append(col)
+
+    return verts2, cols

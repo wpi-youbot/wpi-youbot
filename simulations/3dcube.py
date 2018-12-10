@@ -11,7 +11,6 @@ plt.gca().axes.get_xaxis().set_visible(False)
 ax.w_zaxis.line.set_lw(0.)
 ax.set_zticks([])
 
-
 # ax.zaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
 # ax.zaxis._axinfo["grid"]['color'] =  (1,1,1,0)
 
@@ -22,6 +21,18 @@ ax.set_zticks([])
 # ax.yaxis._axinfo["grid"]['color'] =  (1,1,1,0)# ax.w_zaxis.line.set_lw(0.)
 # ax.set_zticks([])
 
+
+# quivers = ax.quiver(*segs, length=0.1, colors=cols, normalize=True)
+
+x = 1.
+y = 1.
+z = 1.
+u = 1.
+v = 1.
+w = 1.
+
+q_vels = ax.quiver(x, y, z, u, v, w, length=1.0, colors='b', normalize=True, linewidth=3)
+q_tor = ax.quiver(x, y, z, u, v, w, length=1.0, colors='r', normalize=True, linewidth=3)
 
 verts_init = robot_points(0.0, 0.0)
 kuka = Poly3DCollection(verts_init, facecolors='orange', linewidths=1, edgecolors='grey', alpha=.15)
@@ -60,9 +71,15 @@ for it in xrange(4):
 #  -matplotlib
 
 def update_lines(num, rob, whls, path):
-    robot_verts, wheels_verts = print_robot(path[num], path[num], path[num] * 250, rob, whls)
+    vel_val = 0.5 + 0.02 * num
+    tor_val = 1.0 + 0.02 * num/2.0
+    # vel_val = 1.0
+    wheel_vels = np.array([[vel_val], [vel_val], [vel_val], [vel_val]])
+    wheel_torques = np.array([[tor_val], [tor_val], [tor_val], [tor_val]])
+
+    robot_verts, wheels_verts = print_robot(path[num], path[num], path[num] * 250, rob, whls, wheel_vels, q_vels, wheel_torques, q_tor)
     # rob.set_verts(robot_verts)
-    ax.view_init(30, 50*path[num])
+    ax.view_init(30, 50 * path[num])
     ax.set_xlim(path[num] - 4.0, path[num] + 4.0)
     ax.set_ylim(path[num] - 4.0, path[num] + 4.0)
     ax.set_zlim(0, 2)
@@ -70,23 +87,6 @@ def update_lines(num, rob, whls, path):
     ax.elev = 70.
     ax.azim = -60.
     ax.dist = 5. - (0.02 * num)
-    # ax.dist = 5.
-
-
-    # for iter in range(4):
-    #     whls[iter].set_verts(wheels_verts[iter])
-
-
-    # verts_kuka_new = robot_points(path[num], path[num])
-    # verts_wheel_new, _ = make_wheel(path[num] + 0.3, path[num] + 0.2, 0.05, 0.55, path[num] * 50)
-    # wheels[0].set_verts(verts_wheel_new)
-    # # wheel[0].
-    # rob.set_verts(verts_kuka_new)
-    # for line, data in zip(lines, dataLines):
-    #     # NOTE: there is no .set_data() for 3 dim data...
-    #     line.set_data(data[0:2, :num])
-    #     line.set_3d_properties(data[2, :num])
-    # return rob, wheel
 
 
 path = np.arange(1.0, 5.0, 0.02)

@@ -22,27 +22,23 @@ obstacles = np.array([[1.7, 2.3, 3.5],
 traj.generate_path(start, target, obstacles)
 traj.calculate_safe_vels()
 vels = traj.safe_vels
-traj.print_dists()
+# traj.print_dists()
 path = traj.path
 
-fig, ax = plt.subplots()
-print path.shape
-print path
+# print path.shape
+# print vels
+# print path
 # time.sleep(10)
-ax.plot(path[0, :], path[1, :])
 
-ax.set(xlabel='x', ylabel='y',
-       title='Path in the cartesian space')
-ax.grid()
-
-print vels
-fig2, ax2 = plt.subplots()
-# ax2.plot(vels, traj.path)
-ax2.plot(vels)
-
-ax2.set(xlabel='Path point', ylabel='Safe velocity value',
-       title='Safe robot velocities over path waypoints')
-
-ax2.grid()
-
-plt.show()
+# fig, ax = plt.subplots()
+# ax.plot(path[0, :], path[1, :])
+# ax.set(xlabel='x', ylabel='y',
+#        title='Path in the cartesian space')
+# ax.grid()
+# fig2, ax2 = plt.subplots()
+# # ax2.plot(vels, traj.path)
+# ax2.plot(vels)
+# ax2.set(xlabel='Path point', ylabel='Safe velocity value',
+#        title='Safe robot velocities over path waypoints')
+# ax2.grid()
+# plt.show()
