@@ -34,7 +34,7 @@ def compute_segs(i):
 # time.sleep(10)
 # segs = 1, 1, 1, 1, 1, 1
 arr = np.array([1])
-segs = np.array([arr, arr, arr, arr, arr, arr]).reshape(6, -1)
+segs = np.array([arr, arr, arr, arr, arr, arr])
 print type(segs)
 # time.sleep(10)
 cols = ['b' for x in segs[0].ravel()]
@@ -51,12 +51,12 @@ time.sleep(3)
 def animate(i):
     # segs = np.array(compute_segs(i)).reshape(6,-1)
 
-    time.sleep(3)
+    # time.sleep(3)
     # new_segs = [[[x,y,z],[u,v,w]] for x,y,z,u,v,w in zip(*segs.tolist())]
     # new_segs = 1, 1, 1, 1, 1, 1
     # segs = [1], [1], [1], [1], [1], [1]
-    arr = np.array([1])
-    new_segs = np.array([arr, arr, arr, arr, arr, arr]).reshape(6, -1)
+    arr = np.array([1 * i * 0.05])
+    new_segs = np.array([arr, arr, arr, arr, arr, arr])
     quivers.set_segments(new_segs)
     return quivers
 
