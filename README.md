@@ -11,7 +11,10 @@
     git clone https://github.com/wpi-youbot/wpi-youbot
 
 
-### TODO: Run MATLAB code to generate quintic polynomials for waypoints along path and saving polynomial coefficients:
+### Run MATLAB code to generate quintic polynomials for waypoints along path and saving polynomial coefficients:
+    matlab TrajectoryGenerator.m
+This code includes defining the start point, end points, obstacles location and the number of via points required along the path. Once those points are defined, by running the code, a collision-free path will be automatically generated and plotted in addition to the selected via points. Then the corresponding trajectories (Poisitions, Velocities and accelerations) will be generated automatically and plotted in addition to storing the polynomials cofficients for both x and y coordinates in a1 and a2 matrices. These cofficients will be fed to the dynamic model directly.
+
 
 
 ### Run Python implementation of dynamic model and PD controller:
