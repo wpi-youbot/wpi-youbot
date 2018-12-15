@@ -13,7 +13,7 @@
 
 ### Run MATLAB code to generate quintic polynomials for waypoints along path and saving polynomial coefficients:
     matlab TrajectoryGenerator.m
-This code includes defining the start point, end points, obstacles location, the number of via points required along the path and the final time for the trajectories.. Once those points are defined, by running the code, a collision-free path will be automatically generated and plotted in addition to the selected via points. Then the corresponding trajectories (Poisitions, Velocities and accelerations) will be generated automatically and plotted in addition to storing the polynomials cofficients for both x and y coordinates in a1 and a2 matrices. These cofficients will be fed to the dynamic model directly.
+This code includes defining the start point, end points, obstacles location, the number of via points required along the path and the final time for the trajectories. Once those points are defined, by running the code, a collision-free path will be automatically generated and plotted in addition to the selected via points. Then the corresponding trajectories (Positions, Velocities, and Accelerations) will be generated automatically and plotted in addition to storing the polynomials cofficients for both x and y coordinates in a1 and a2 matrices. These cofficients will be fed to the dynamic model in the nexr step.
 
 
 
