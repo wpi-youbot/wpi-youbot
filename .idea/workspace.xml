@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69bae65f-3f3e-4c79-aca4-b9a192b38807" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/motion_variants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulations/sim1.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulations/sim1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulations/sim1_with_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulations/sim1_with_control.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/motion1.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/motion1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vel2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vel2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,116 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulations/our_rendering.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6407">
-              <caret line="192" column="11" selection-start-line="192" selection-start-column="11" selection-end-line="192" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulations/sim1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1161">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simulations/3dcube.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/find_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/VelFitting.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="28" selection-start-line="28" selection-end-line="28" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vel1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vel2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3268">
-              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/motion1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/simulations/sim1_with_control.py">
+        <entry file="file://$PROJECT_DIR$/src/motion_variants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="92" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="149">
+              <caret line="157" column="18" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/trajectory_generation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4128">
-              <caret line="96" column="52" lean-forward="true" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,6 +45,9 @@
       <find>k</find>
       <find>l</find>
       <find>wlwwk</find>
+      <find>mass</find>
+      <find>plot</find>
+      <find />
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,7 +72,6 @@
         <option value="$PROJECT_DIR$/src/youbot_functions.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py" />
         <option value="$PROJECT_DIR$/src/MecanumWheelRobot.py" />
-        <option value="$PROJECT_DIR$/src/vicon_subscriber.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/kurczak.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/kaczka.py" />
         <option value="$PROJECT_DIR$/src/robot.py" />
@@ -196,10 +99,12 @@
         <option value="$PROJECT_DIR$/src/vel1.py" />
         <option value="$PROJECT_DIR$/src/trajectory_generation.py" />
         <option value="$PROJECT_DIR$/src/VelFitting.py" />
-        <option value="$PROJECT_DIR$/src/vel2.py" />
-        <option value="$PROJECT_DIR$/src/motion1.py" />
-        <option value="$PROJECT_DIR$/simulations/sim1.py" />
         <option value="$PROJECT_DIR$/simulations/sim1_with_control.py" />
+        <option value="$PROJECT_DIR$/simulations/sim1.py" />
+        <option value="$PROJECT_DIR$/src/vicon_subscriber.py" />
+        <option value="$PROJECT_DIR$/src/motion1.py" />
+        <option value="$PROJECT_DIR$/src/vel2.py" />
+        <option value="$PROJECT_DIR$/src/motion_variants.py" />
       </list>
     </option>
   </component>
@@ -217,7 +122,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -229,12 +133,6 @@
               <item name="wpi-youbot" type="b2602c69:ProjectViewProjectNode" />
               <item name="wpi-youbot" type="462c0819:PsiDirectoryNode" />
               <item name="simulations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wpi-youbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wpi-youbot" type="462c0819:PsiDirectoryNode" />
-              <item name="simulations" type="462c0819:PsiDirectoryNode" />
-              <item name="unused_animations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wpi-youbot" type="b2602c69:ProjectViewProjectNode" />
@@ -259,6 +157,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,7 +192,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sim1_with_control">
+  <component name="RunManager" selected="Python.motion_variants">
     <configuration name="motion1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="wpi-youbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -315,7 +214,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sim1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="motion_variants" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="wpi-youbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -323,11 +222,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/simulations" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/simulations/sim1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/motion_variants.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -357,27 +256,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="vel1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="wpi-youbot" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/vel1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="vel2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="wpi-youbot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -399,20 +277,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="vicon_subscriber" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="wpi-youbot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/vicon_subscriber.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.sim1" />
-      <item itemvalue="Python.vel1" />
       <item itemvalue="Python.vel2" />
-      <item itemvalue="Python.motion1" />
       <item itemvalue="Python.sim1_with_control" />
+      <item itemvalue="Python.vicon_subscriber" />
+      <item itemvalue="Python.motion1" />
+      <item itemvalue="Python.motion_variants" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sim1_with_control" />
+        <item itemvalue="Python.motion_variants" />
         <item itemvalue="Python.vel2" />
-        <item itemvalue="Python.sim1" />
-        <item itemvalue="Python.vel1" />
+        <item itemvalue="Python.sim1_with_control" />
         <item itemvalue="Python.motion1" />
+        <item itemvalue="Python.vicon_subscriber" />
       </list>
     </recent_temporary>
   </component>
@@ -616,7 +515,21 @@
       <option name="project" value="LOCAL" />
       <updated>1544468650453</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="plotting and dyn-traj4">
+      <created>1544469554474</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1544469554474</updated>
+    </task>
+    <task id="LOCAL-00029" summary="plotting and dyn-traj5">
+      <created>1544469728615</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1544469728615</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -629,14 +542,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-5" y="45" width="1925" height="2120" extended-state="0" />
+    <frame x="-2" y="20" width="962" height="1062" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.6896552" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1641161" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879695" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.2389766" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.23523623" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32389766" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -650,17 +564,17 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33853477" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1641161" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879695" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.2389766" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.2379936" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32389766" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3379515" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.020277482" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.037016876" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32870865" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5013193" side_tool="true" weight="0.31590182" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32870865" />
@@ -670,8 +584,6 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding Python simulations" />
-    <MESSAGE value="cube ok transparency issues" />
     <MESSAGE value="sending using vicon data to move the robot" />
     <MESSAGE value="adding missing rosbags" />
     <MESSAGE value="adding missing rosbags 2" />
@@ -695,7 +607,9 @@
     <MESSAGE value="plotting and dyn-traj" />
     <MESSAGE value="plotting and dyn-traj2" />
     <MESSAGE value="plotting and dyn-traj3" />
-    <option name="LAST_COMMIT_MESSAGE" value="plotting and dyn-traj3" />
+    <MESSAGE value="plotting and dyn-traj4" />
+    <MESSAGE value="plotting and dyn-traj5" />
+    <option name="LAST_COMMIT_MESSAGE" value="plotting and dyn-traj5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -843,23 +757,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/launch/launch.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/simple_topic_publisher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="e#23#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/testArrays.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -948,16 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vicon_subscriber.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1376">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-          <folding>
-            <element signature="e#24#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -986,38 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/traj.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1548" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/animation042.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1204">
-          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/anim_cube_moving.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="962">
-          <caret line="119" column="19" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
-          <folding>
-            <element signature="e#943#962#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/basic_example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-199">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#179#197#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/simulations/traj.m" />
+    <entry file="file://$PROJECT_DIR$/simulations/animation042.py" />
+    <entry file="file://$PROJECT_DIR$/simulations/anim_cube_moving.py" />
+    <entry file="file://$PROJECT_DIR$/simulations/basic_example.py" />
     <entry file="file://$PROJECT_DIR$/simulations/unused_animations/arrow_anim.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1025,16 +884,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/cyl2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#291#309#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/simulations/cyl2.py" />
     <entry file="file://$PROJECT_DIR$/simulations/unused_animations/to_solve/old_quiver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="842">
@@ -1045,16 +895,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/our_quiver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/simulations/our_quiver.py" />
     <entry file="file://$PROJECT_DIR$/simulations/unused_animations/to_solve/quiver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
@@ -1143,26 +984,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VelFitting.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vel1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simulations/our_rendering.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6407">
+        <state relative-caret-position="3458">
           <caret line="192" column="11" selection-start-line="192" selection-start-column="11" selection-end-line="192" selection-end-column="11" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
@@ -1170,9 +994,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/vicon_subscriber.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#24#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/find_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="779">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -1182,34 +1015,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/trajectory_generation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4128">
-          <caret line="96" column="52" lean-forward="true" selection-start-line="96" selection-start-column="52" selection-end-line="96" selection-end-column="52" />
+        <state relative-caret-position="29">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/3dcube.py">
+    <entry file="file://$PROJECT_DIR$/simulations/sim1_with_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="1013">
+          <caret line="115" column="15" selection-start-line="115" selection-start-column="15" selection-end-line="115" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vel2.py">
+    <entry file="file://$PROJECT_DIR$/src/MecanumWheelRobot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3268">
-          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        <state>
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vel1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulations/sim1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulations/3dcube.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/motion1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
+        <state relative-caret-position="475">
           <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
@@ -1217,22 +1076,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/sim1.py">
+    <entry file="file://$PROJECT_DIR$/src/vel2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="342">
+          <caret line="81" column="22" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulations/sim1_with_control.py">
+    <entry file="file://$PROJECT_DIR$/src/VelFitting.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        <state relative-caret-position="19">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/motion_variants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="157" column="18" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

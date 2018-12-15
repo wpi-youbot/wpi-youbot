@@ -5,12 +5,13 @@ from trajectory_generation import *
 import numpy as np
 
 mass = 20
-u_friction = 0.02
+u_friction = 0.3
 # u_friction = 0.20
 # u_friction = 0.10
 # u_friction = 0.05
 acceleration = 2.0
-# acceleration = 0.25
+acceleration = 0.25
+acceleration = 0.5
 vel_limit = 2.0
 traj = Trajectory(mass, u_friction, acceleration, vel_limit)
 
@@ -23,8 +24,8 @@ target = np.array([[2.0],
 obstacles = np.array([[1.7, 2.3, 3.5],
                       [1.6, 1.9, 3.5]])
 
-obstacles = np.array([[1.7, 2.3, 2.1],
-                      [1.6, 1.9, 3.5]])
+# obstacles = np.array([[1.7, 2.3, 2.1],
+#                       [1.6, 1.9, 3.5]])
 
 
 traj.generate_path(start, target, obstacles)
@@ -36,6 +37,11 @@ print path_based_vels.shape
 path = traj.path
 print path.shape
 
+fit = VelFitting(path)
+
+fit.set_robot_properties(mass, u_friction, acceleration)
+
+# vel_lim = 2  # [m/s]
 
 # print path.shape
 # print vels

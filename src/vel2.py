@@ -34,14 +34,14 @@ fit = VelFitting(path)
 vel_lim = 2  # [m/s]
 
 fit.set_robot_properties(mass, u_friction, acceleration)
-start = np.array([[2.0],  # x
+start_state = np.array([[2.0],  # x
                   [0.0],  # y
                   [0.0],  # rot
                   [0.0],  # xd
                   [0.0],  # yd
                   [0.0]])  # rotd
 
-final = np.array([[2.0],  # x
+final_state = np.array([[2.0],  # x
                   [5.0],  # y
                   [0.0],  # rot
                   [0.0],  # xd
@@ -49,7 +49,7 @@ final = np.array([[2.0],  # x
                   [0.0]])  # rotd
 
 # fit.set_vel_conditions(start, final, constraints, max_robot_vel=2.0)
-fit.set_vel_conditions(start, final, path_based_vels, max_robot_vel=2.0)
+fit.set_vel_conditions(start_state, final_state, path_based_vels, max_robot_vel=2.0)
 limit_vels = fit.vel_path_constr
 # print limit_vels
 # print limit_vels[-1]
