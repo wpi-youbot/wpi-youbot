@@ -6,11 +6,15 @@ function [a] = trajectory_blend_quintic(x,tf,afigure)
 %It returns a matrix that includes the cofficients of each segment
 %polynomial in a row order.
 
+%% Initialization
 j=size(x,2);
-a=zeros((j-1),6);
-t=linspace(0,tf,j);
-step=0.003
-x_d=zeros(1,j)
+a=zeros((j-1),6);           % Initiating the cofficients matrix.
+t=linspace(0,tf,j);         %Segmenting the time span into equal spans along each polynomial
+step=0.003                  %Time step used for generating points along the polynomial
+x_d=zeros(1,j)              %Initiating the Velocities vector.
+x_dd=zeros(1,j)             %Initiating the accelerations vector.
+
+%% Velocities Constraints Automatic Generating
 for ii=1:(j-2)
     dk1=(x(ii+1)-x(ii))/(t(ii+1)-t(ii))
     dk2=(x(ii+2)-x(ii+1))/(t(ii+2)-t(ii+1))
@@ -20,7 +24,8 @@ for ii=1:(j-2)
         x_d(ii+1)=(dk1+dk2/2)
     end
 end
-x_dd=zeros(1,j)
+
+%% Accelerations Constraints Automatic Generating
 for ii=1:(j-2)
     dk1=(x_d(ii+1)-x_d(ii))/(t(ii+1)-t(ii))
     dk2=(x_d(ii+2)-x_d(ii+1))/(t(ii+2)-t(ii+1))
@@ -30,6 +35,8 @@ for ii=1:(j-2)
         x_dd(ii+1)=(dk1+dk2/2)
     end
 end
+
+%% Calculating the polynomial cofficients at each pair of via points by iterations
 for ii=1:(j-1)
     tr=t(ii+1)-t(ii); %time of the segment referenced to the initial time of the segment
     %M is the polynomial matrix for position, velocity, acceleration for
@@ -43,11 +50,11 @@ for ii=1:(j-1)
    %b is the initial and final conditions of the segment vector
     b = [x(ii);x_d(ii);x_dd(ii);x(ii+1);x_d(ii+1);x_dd(ii+1)];
    %a is the polynomial coffecients matrix
-    a(ii,:)=(M\b)';
-  
+    a(ii,:)=(M\b)';       %a=inv(M)*b
+   
     t_interval=t(ii):step:t(ii+1);
     td=t_interval-t(ii);
-    
+%% Plotting the trajectories   
     if afigure==1
         figure(2);
         hold on
