@@ -28,8 +28,11 @@ This will use controller to follow pre-defined simple trajectories x(t) = t^3 an
     python simulations/sim1_with_control.py
 This will load the trajectories saved from the previous step and plot the reference and controller-generated trajectories in a 3D plot. The simulated KUKA YouBot will follow the controller-generated trajectory in an animation.
 Uncomment line 23 to show animation when payload = 0:
+
     new_path = np.vstack((x_pos, y_pos))
+    
 Uncomment line 26 to show animation when payload = 100:
+
     new_path = np.vstack((x_pos_100, y_pos_100))
 
 
