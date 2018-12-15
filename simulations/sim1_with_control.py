@@ -24,6 +24,8 @@ y_ref = np.load('y_ref.npy')
 
 # Unconmment this to show animation when payload = 100
 new_path = np.vstack((x_pos_100, y_pos_100))
+
+# Setting reference trajectory from loaded numpy
 ref_path = np.vstack((x_ref, y_ref))
 path = new_path
 
@@ -88,6 +90,7 @@ ax.set_ylabel('Y')
 
 # Plotting reference trajectory
 ax.plot(ref_path[0, :], ref_path[1, :])
+
 # Plotting controller-generated trajectory
 ax.plot(new_path[0, :], new_path[1, :], "--r", linewidth=3)
 
