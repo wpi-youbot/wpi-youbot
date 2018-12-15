@@ -39,7 +39,7 @@ Uncomment line 26 to show animation when payload = 100:
     new_path = np.vstack((x_pos_100, y_pos_100))
 
 
-Run the following to visualize velocity fitting procedure under velocity constraints produced by Centrifugal forces along waypoints of path:
+### Run the following to visualize velocity fitting procedure under velocity constraints produced by Centrifugal forces along waypoints of path:
 
     python simulations/motion_variants.py
 
