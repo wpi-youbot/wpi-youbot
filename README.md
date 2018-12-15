@@ -61,7 +61,7 @@ Install the following dependencies:
     sudo apt-get install libnlopt-dev   
     sudo apt-get install gksu
 
-####Please report any additional dependencies missing.
+#### Please report any additional dependencies missing.
 
 
 Build your workspace
