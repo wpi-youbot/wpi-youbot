@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69bae65f-3f3e-4c79-aca4-b9a192b38807" name="Default Changelist" comment="">
+    <list default="true" id="69bae65f-3f3e-4c79-aca4-b9a192b38807" name="Default Changelist" comment="plotting and dyn-traj 6">
       <change afterPath="$PROJECT_DIR$/src/motion_variants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulations/sim1.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulations/sim1.py" afterDir="false" />
@@ -17,16 +17,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/motion_variants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="157" column="18" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
+            <state relative-caret-position="274">
+              <caret line="169" column="12" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/motion_variants2.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -99,12 +104,12 @@
         <option value="$PROJECT_DIR$/src/vel1.py" />
         <option value="$PROJECT_DIR$/src/trajectory_generation.py" />
         <option value="$PROJECT_DIR$/src/VelFitting.py" />
-        <option value="$PROJECT_DIR$/simulations/sim1_with_control.py" />
         <option value="$PROJECT_DIR$/simulations/sim1.py" />
         <option value="$PROJECT_DIR$/src/vicon_subscriber.py" />
         <option value="$PROJECT_DIR$/src/motion1.py" />
         <option value="$PROJECT_DIR$/src/vel2.py" />
         <option value="$PROJECT_DIR$/src/motion_variants.py" />
+        <option value="$PROJECT_DIR$/simulations/sim1_with_control.py" />
       </list>
     </option>
   </component>
@@ -122,6 +127,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,7 +163,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -542,15 +547,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="20" width="962" height="1062" extended-state="0" />
-    <editor active="true" />
+    <frame x="-5" y="45" width="3850" height="2120" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1641161" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1666226" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879695" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.23523623" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49868074" visible="true" weight="0.23516603" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32389766" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -584,7 +588,6 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sending using vicon data to move the robot" />
     <MESSAGE value="adding missing rosbags" />
     <MESSAGE value="adding missing rosbags 2" />
     <MESSAGE value="vicon-based simulation ok" />
@@ -609,7 +612,8 @@
     <MESSAGE value="plotting and dyn-traj3" />
     <MESSAGE value="plotting and dyn-traj4" />
     <MESSAGE value="plotting and dyn-traj5" />
-    <option name="LAST_COMMIT_MESSAGE" value="plotting and dyn-traj5" />
+    <MESSAGE value="plotting and dyn-traj 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="plotting and dyn-traj 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -757,9 +761,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/testArrays.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/kurczak.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
@@ -1098,13 +1099,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/motion_variants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="157" column="18" selection-start-line="157" selection-start-column="18" selection-end-line="157" selection-end-column="18" />
+        <state relative-caret-position="274">
+          <caret line="169" column="12" selection-start-line="169" selection-start-column="12" selection-end-line="169" selection-end-column="12" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/motion_variants2.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
